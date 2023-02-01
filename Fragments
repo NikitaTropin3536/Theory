@@ -1,0 +1,24 @@
+FragmentManager и фрагменты
+Расскажу о паре лайфхаков, которые помогут в кр
+1. Пройдите тестик в учебнике - оттуда можно взять пару интересных фактов (это займет не больше 3 минут)
+2. <fragment
+        android:id="@+id/fragment_a"
+        android:name="com.example.fragmentssample.SampleFragmentA"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2" />
+обратите внимание на значение атрибута android:name, это полное имя класса, реализующего данный фрагмент
+3. Для управления фрагментами в активности необходим экземпляр класса FragmentManager.
+   Чтобы получить его, следует вызвать метод getFragmentManager() из кода активности.
+   FragmentManager fragmentManager = getFragmentManager();
+4.
+   Класс FragmentManager имеет два метода, позволяющих найти фрагмент, связанный с активностью:
+   findFragmentById(int id) — находит фрагмент по идентификатору;
+   findFragmentByTag(String tag) — находит фрагмент по заданному тегу.
+5. Любой набор изменений, вносимых в активность, называется транзакцией
+6. Экземпляр класса FragmentTransaction можно получить от класса FragmentManager, например, так:
+   FragmentManager fragmentManager = getFragmentManager();
+   FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+   
+на этом, пожалуй, все. читаните в учебнике и фрагменты уложатс в голове + пссомотрите мои проекты myfragments и fragments2
+потыкайте
